@@ -1,102 +1,61 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>答应你的小惊喜</title>
-
-<style type="text/css">
-@font-face {
-	font-family: digit;
-	src: url('digital-7_mono.ttf') format("truetype");
-}
-</style>
-
-<link href="css/default.css" type="text/css" rel="stylesheet">
-<script type="text/javascript" src="js/jquery.js"></script>
-<script type="text/javascript" src="js/garden.js"></script>
-<script type="text/javascript" src="js/functions.js"></script>
-
+    <title>Happy Birthday</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-<audio id="bgm" src="玉盘.mp3" autoplay loop></audio>
+    <div class="container">
+        <div class="row">
+            <div class="loader">
+                <button id="play">Start</button>
+            </div>
+        </div>
+    </div>
+    <audio class="song" controls loop>
+        <source src="music.mp3">
+        </source>
+        Your browser isn't invited for super fun audio time.
+    </audio>
+    <canvas id="confetti"></canvas>
+    <div class="main">
+        <div class="container pt-5">
+            <div class="row">
 
-<div id="mainDiv">
-	<div id="content">
-		<div id="code">
-        	我最近也在努力着<br />
-            想成为一个</span><br />
-            <span class="keyword">让你放心的人</span><br /><br />
+                <div class="col-12 col-xl-6 mx-auto">
+                    <img src="img/banner.png" alt="">
+                </div>
 
-            而你也在努力着<br />
-            在自己的路上<br />
-            <span class="keyword">一步步变得更好</span><br /><br />
+                <div class="col-12  text-center">
+                    <div id="name" class="area">吴相宜</div>
+                </div>
 
-            这种相遇<br />
-            真的会让人<br />
-             <span class="keyword">觉得很幸运</span><br /><br />
+                <div class="col-12 text-center">
+                    <div class="type-wrap">
+                        <div id="typed-strings" class="typing">
+                            <h2>Happy Birthday <i id="nae">吴相宜</i></h2>
+                            <h2>Have a wonderful day</h2>
+                            <h2>Filled with joy and happiness.</h2>
+                        </div>
+                        <span id="typed" style="white-space:pre;"></span>
+                    </div>
+                </div>
 
-            愿你的努力与可爱<br />
-            <span class="keyword">都被温柔对待</span><br /><br />
-
-             <hr />
-   			<span class="keyword">I want to say:</span><br />
-			Little potato<br />
-            <span class="keyword"> I’m cheering for you. </span><br />
-            -- you friend Hu<br />
-
-
-		</div>
-		<div id="loveHeart">
-			<canvas id="garden"></canvas>
-			<div id="words">
-				<div id="messages">
-					自我们相识...
-					<div id="elapseClock"></div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-
-<script type="text/javascript">
-	var offsetX = $("#loveHeart").width() / 2;
-	var offsetY = $("#loveHeart").height() / 2 - 55;
-	var together = new Date();
-
-	together.setFullYear(2026, 0, 9);//1.23；3.29
-	together.setHours(14);
-	together.setMinutes(3);
-	together.setSeconds(0);
-	together.setMilliseconds(0);
-
-	if (!document.createElement('canvas').getContext) {
-		var msg = document.createElement("div");
-		msg.id = "errorMsg";
-		msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+";
-		document.body.appendChild(msg);
-		$("#code").css("display", "none")
-		$("#copyright").css("position", "absolute");
-		$("#copyright").css("bottom", "10px");
-		document.execCommand("stop");
-	} else {
-		setTimeout(function () {
-			startHeartAnimation();
-		}, 5000);
-
-		timeElapse(together);
-		setInterval(function () {
-			timeElapse(together);
-		}, 500);
-
-		adjustCodePosition();
-		$("#code").typewriter();
-	}
-	document.body.addEventListener('click', function () {
-    document.getElementById('bgm').play();
-}, { once: true });
-
-</script>
-
+                <div class="col-12 col-xl-3 cake">
+                    <img src="img/cake.gif" alt="">
+                </div>
+            </div>
+        </div>
+        <img src="img/Balloon-Border.png" width="100%" class="balloon-border">
+    </div>
 </body>
+<script src="https://unpkg.com/magic-snowflakes/dist/snowflakes.min.js"></script>
+<script src="js/jquery.js"></script>
+<script src="js/typed.min.js"></script>
+<script src="js/script.js"></script>
+
 </html>
